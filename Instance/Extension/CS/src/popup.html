@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CS - Lag Patch - Options</title>
+  <script src="local.js" ></script>
+  <script src="popup.js" ></script>
+  
+  <style>
+    body {
+      width: 300px;
+      font: 13px arial;
+      color: #000;
+    }
+
+    select {
+      border: 1px #ccc solid;
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 10px;
+      width: 100%;
+    }
+
+    input {
+      border: 1px #ccc solid;
+      border-radius: 4px;
+      padding: 4px 6px;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 5px;
+      width: 95%;
+    }
+
+    #modeDesc {
+      border: 1px #f0e10e solid;
+      padding: 4px;
+      font-size: 12px;
+      display: block;
+      margin-bottom: 10px;
+      background: #fffbc9;
+    }
+
+    #main {
+      margin-right: 320px;
+    }
+
+    #sidebar {
+      float: right;
+      width: 300px;
+      text-align: left;
+    }
+
+    #sidebar ul {
+      margin: 10px 0 0 0;
+      padding: 0;
+      list-style: none;
+      max-height: 156px;
+      overflow: auto;
+    }
+
+    #sidebar ul li a.delete {
+      float: right;
+      display: inline-block;
+      background: #efefef;
+      padding: 4px 0px;
+      width: 26px;
+      text-align: center;
+      border: 1px #ccc solid;
+      color: red;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #sidebar ul li a.edit {
+      float: right;
+      display: inline-block;
+      background: #efefef;
+      padding: 4px 0px;
+      width: 36px;
+      text-align: center;
+      border: 1px #ccc solid;
+      color: green;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 4px;
+      margin-right: 2px;
+    }
+
+    #sidebar ul li a.account {
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      overflow: hidden;
+      display: block;
+      margin-right: 70px;
+      margin-bottom: 1px;
+      background: #efefef;
+      padding: 4px 6px;
+      border: 1px #ccc solid;
+      color: blue;
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #sidebar ul li a.account:hover {
+      background: #f7f7f7;
+    }
+
+    button {
+      margin-bottom: 10px;
+    }
+
+    #addButton {
+      color: blue;
+      text-decoration: none;
+      font-weight: bold;
+      float: right;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="sidebar">
+
+    <div id="view_links">
+      
+
+      <ul id="accountlist">
+      </ul>
+    </div>
+
+    <div id="view_add" style="display:none">
+      <h3>Enter Your R2 Account</h3>
+      <div id="r2_acc">
+        <p><b>Email / ID</b></p>
+        <input type="text" value="" id="account" />
+        <p><b>Password</b></p>
+        <input type="password" value="" id="password" />
+      </div>
+      <p><b>Nickname (optional)</b></p>
+      <input type="text" value="" id="nickname" />
+      <p><b>Server ID</b></p>
+      <select id="server_id"></select>
+      <button id="add_back">
+        Back
+      </button>
+      <button id="add_edit" style="float: right">
+        Send
+      </button>
+    </div>
+
+  </div>
+
+  <div id="main">
+
+  </div>
+
+</body>
+
+</html>

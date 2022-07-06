@@ -1,0 +1,20 @@
+{
+   "browser_action": {
+      "default_icon": "icons/icon128.png",
+      "default_popup": "src/popup.html"
+   },
+   "content_scripts": [ {
+      "js": [ "src/inject.js", "src/local.js"],
+      "matches": [ "*://r2cdn-encs.r2games.com/*", "*://www.r2games.com/play/*" ]
+   } ],
+   "description": "Increases the FPS on Crystal Saga (R2)",
+   "icons": {
+      "128": "icons/icon128.png",
+      "48": "icons/icon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAu8tRxYrPhm2JkO1KNiSV0i44kypUGOJtUrQ8hvUzIGIaEoB2RydaSu2WH1tc8FQlkRhIe9b8YI8k62Ndg3ob/yLg8Bb1u6PirGfmzDtAh2+grAQkcfZRmsN/4ItNcrMuA9CMzvZf5nfi8TfOk9CPLXnv9BdDZZLafUzeB9ahHXrq3hxoisuiy8uECy2pF7O5hMjPPoJ9NxgX/1rIMmPs8+sAbznu4kELC2IPN1hMUZrEocU5uDqNGMdFJ5MS2XNW3y+0jhl9I+eu2XagIqhX9Naly6LCagmmC5vB/eMLJuEeKtUG/S6GHD0cPx1NEg3D1/rLee5B2rFqZ9OTe4BIUQIDAQAB",
+   "manifest_version": 2,
+   "name": "Crystal Saga - Lag Patch / Direct Links",
+   "permissions": [ "storage" ],
+   "version": "0.0.5"
+}
