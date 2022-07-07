@@ -6,7 +6,7 @@ dependecies = [
     { "package" : "asyncio", "module": "asyncio"},
     { "package" : "python-socketio[asyncio_client]", "module" : "socketio" },
     { "package" : "pyautogui", "module" : "pyautogui"},
-    { "package" : "opencv-python" , "module" : "cv2"},
+    { "package" : "opencv-python-headless" , "module" : "cv2"},
     { "package" : "aiohttp", "module" : "aiohttp"},
     { "package" : "selenium", "module" : "selenium"},
     { "package" : "pymongo", "module" : "pymongo"},
