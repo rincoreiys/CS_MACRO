@@ -31,6 +31,6 @@ def checking_package(silent:bool = False):
         if importlib.util.find_spec(module, package): 
             if not silent : print(f'Package {module} found')
         else:  
-            Thread(target=install_package, kwargs={ "name" : package, "silent" : silent}).start()
+            install_package(package,silent)
     
 checking_package()
