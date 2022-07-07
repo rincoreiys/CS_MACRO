@@ -2,6 +2,9 @@
 echo off
 set action=%1
 
+git config --global user.email "febri7299@gmail.com"
+git config --global user.name "rincoreiys"
+
 IF "%action%"=="push" (
     git add --all
     git commit -m "PUSH"
