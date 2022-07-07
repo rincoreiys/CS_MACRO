@@ -5,11 +5,13 @@ from threading import Thread
 from Helper.Exception import LoginException, LoginStuckException, DisconnectException
 from Instance.Manager import Instance
 from selenium.common.exceptions import WebDriverException, TimeoutException
-from Gameplay.operation import detect_error, get_rid_annoying_error, login
-parser = argparse.ArgumentParser()
-parser.add_argument('-n', '--node', help="Connect as a client with number given", type=int)
-args = parser.parse_args()
-node_number = args.node
+from Gameplay.operation import detect_error, login
+
+  
+# Opening JSON CONFIG  file
+f = open('config.json')
+config = json.load(f)
+
 sio = socketio.AsyncClient(reconnection_attempts=10)
 
 def only(obj:object, keys = [] ):
@@ -59,12 +61,9 @@ class Handler(socketio.AsyncClientNamespace):
     # async def on_off_character(self):
     #     self.instance.character = None
     #     await sio.emit("sync", data=only(self.instance, ["hwnd", "character"]) , namespace="/node" )
-handler = Handler('/node', node_number=node_number)
+handler = Handler('/node', node_number=config["NODE_NUMBER"])
 sio.register_namespace(handler)
 
 async def listen():
-    await sio.connect(f"http://127.0.0.1:3000/node?number={node_number}" )
+    await sio.connect(f"{config['SERVER']}/node?number={config['NODE_NUMBER']}" )
     await sio.wait()
-  
-    # print("ASYNCIO", threading.current_thread(), threading.main_thread())
-        

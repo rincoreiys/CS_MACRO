@@ -1,5 +1,6 @@
 # ignore ALL .log files
 *.log
+config.json
 __init__.py
 
 

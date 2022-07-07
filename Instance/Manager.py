@@ -59,17 +59,6 @@ class Instance:
         self.setHwnd()
         focus(self.hwnd)
         
-    def is_closed(self, callback):
-        while True:
-            try:
-                self.driver.current_url
-            except WebDriverException as driver_exception:
-                print("driver error", driver_exception)
-                break
-            time.sleep(0.5)
-    
-    
-
     async def run(self, routines):
         self.routines = routines
        
